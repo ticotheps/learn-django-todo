@@ -12,13 +12,7 @@
 		{% else %}
 		<p>Hello, anonymous user!</p>
 		{% endif %}
-		<ul>
-			{% for todo in todo_list %}
-			<li>
-				<a href="/{{ todo.id }}">{{ todo.name }}</a>, it's due {{ todo.due_date
-				}}
-			</li>
-			{% endfor %}
-		</ul>
+		<p>The todo is: {{ todo.name }}</p>
+		<p>The due date is: {{ todo.due_date }}</p>
 	</body>
 </html>
