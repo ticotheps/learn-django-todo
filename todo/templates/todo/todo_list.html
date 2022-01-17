@@ -1,0 +1,21 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tico's Todo List</title>
+	</head>
+	<body>
+		<h1>Tico's Todo List</h1>
+		{% if request.user.is_authenticated %}
+		<p>Hello, {{ request.user.username }}!</p>
+		{% else %}
+		<p>Hello, anonymous user!</p>
+		{% endif %}
+		<ul>
+			{% for todo in todo_list %}
+			<li>{{ todo.name }}, it's due {{ todo.due_date }}</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>
